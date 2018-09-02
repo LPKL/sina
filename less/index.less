@@ -1,0 +1,250 @@
+@import "font.less";
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+@r:75rem;
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+//头部
+header{
+  background: linear-gradient(40deg, #838dfb, #8191f8 10%, #4fa2f1 50%, #1eabf6);
+  .title{
+    padding: 20/@r 20/@r 0;
+    overflow: hidden;
+    height: 105/@r;
+    >div{
+      font-size: 36/@r;
+      color: #fff;
+      position: relative;
+      &:nth-child(1){
+        float: left;
+        font-size: 132/@r;
+        top:-20/@r;
+      }
+      &:nth-child(2){
+        float: right;
+        top:23/@r;
+      }
+      &:nth-child(3){
+        float: right;
+        line-height: 1;
+        right: 32/@r;
+        top:23/@r;
+      }
+    }
+  }
+  .hd_nav{
+    font-size: 32/@r;
+    overflow: hidden;
+    line-height: 1.1;
+    text-align: left;
+    width: 100% ;
+    a{
+      float: left;
+      display: block;
+      width: 14%;
+      color: #fff;
+      text-align: center;
+      margin: 0 2/@r 24/@r 0;
+      font-size: 32/@r;
+      font-family: microsoft yahei;
+    }
+  }
+}
+//切换
+.tab_box{
+  width: 100%;
+  ul{
+    display: flex;
+    margin: 0 20/@r;
+    border-bottom: 1px solid #0c0c0c;
+    li{
+      flex: 1;
+      height:80/@r;
+      line-height: 80/@r;
+      font-size: 34/@r;
+      color: #1a1a1a;
+      text-align: center;
+      position: relative;
+      &.current{
+        color: #008af5;
+        font-weight: 900;
+        font-size: 34/@r;
+        &::after{
+          content: '';
+          display: block;
+          width: 50/@r;
+          height:4/@r;
+          position: absolute;
+          left: 50%;
+          margin-left: -25/@r;
+          background-color: #008af5;
+          bottom: -2/@r;
+          border-radius: 6/@r;
+        }
+      }
+      &:nth-child(1){
+        text-align: left;
+        &.current::after{//第一个li加了current类，他的下面的伪类的样式稍微变化
+          left: 45/@r;
+          margin-left: 0;
+        }
+      }
+      &:nth-child(3){
+        text-align: right;
+        &.current::after{//当前节点如果有了current类，那么他后面的伪类的样式
+          //left: 142/@r;
+          //margin-left: 0;
+          right: 45/@r;
+          left:auto;//为了解决权重
+          margin-right: 0;
+        }
+      }
+
+    }
+
+
+  }
+}
+//轮播图部分
+.news_Box{
+  padding:20/@r 20/@r 0;
+  .swiper-container{
+    overflow: hidden;
+    .swiper-wrapper{
+      .swiper-slide{
+        max-height: 340/@r;
+        img{
+          width: 100%;
+        }
+        div{
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          color: #fff;
+          font-size: 32/@r;
+          padding: 94/@r 16/@r 16/@r;
+          background: -webkit-linear-gradient(top,transparent,rgba(0,0,0,.4));
+        }
+      }
+    }
+    .pageBox{
+      text-align: right;
+      color: #fff;
+      font-size: 30/@r;
+      box-sizing: border-box;
+      padding-right:20/@r;
+      .currentPage{
+        font-size: 40/@r;
+      }
+    }
+  }
+  .listBox{
+    a{
+      display: flex;
+      border-bottom: 1px solid #000;
+      color: #1a1a1a;
+      padding: 22/@r 0;
+      div.text_box{
+        position: relative;
+        width: 100%;
+        flex: 1;
+        min-height: 100/@r;
+        p{
+          font-size: 34/@r;
+          line-height: 48/@r;
+          margin-right: 10/@r;
+        }
+        .comment_box{
+          position: absolute;
+          bottom: 0;
+          color: #888;
+          width: 100%;
+          text-align: right;
+          font-size: 25/@r;
+          em{
+            font-style:normal;
+          }
+        }
+      }
+      .img_box{
+        width: 200/@r;
+        height: 134/@r;
+        margin-right:25/@r;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    .psp{
+      display: block;
+      .three_title{
+        font-size: 34/@r;
+        box-sizing: border-box;
+        line-height:48/@r;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-weight: 400;
+      }
+      .three_pic{
+        display: flex;
+        margin: 18/@r 0 22/@r;
+        position: relative;
+        height: 154/@r;
+        div{
+          flex: 1;
+          margin-right:10/@r;
+          width: 34%;
+          position: relative;
+          line-height: 1.5;
+          img{
+            width: 100%;
+          }
+          &:nth-child(3){
+            margin-right: 0;
+          }
+        }
+      }
+      .comment_box{
+        color: #888;
+        width: 100%;
+        text-align: right;
+        font-size: 25/@r;
+        padding-right: 50/@r;
+        em{
+          font-style:normal;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
